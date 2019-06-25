@@ -1,5 +1,6 @@
 <template>
   <div class="editor">
+    <!-- 工具栏 -->
     <editor-menu-bar :editor="editor" v-slot="{ commands, isActive }">
       <div class="menubar">
 
@@ -131,13 +132,49 @@
       </div>
     </editor-menu-bar>
 
+    <!-- 工具栏：选中文本后冒泡触发 -->
+    <editor-menu-bubble :editor="editor" :keep-in-bounds="keepInBounds" v-slot="{ commands, isActive, menu }">
+      <div
+        class="menububble"
+        :class="{ 'is-active': menu.isActive }"
+        :style="`left: ${menu.left}px; bottom: ${menu.bottom}px;`"
+      >
+
+        <button
+          class="menububble__button"
+          :class="{ 'is-active': isActive.bold() }"
+          @click="commands.bold"
+        >
+          <icon name="bold" />
+        </button>
+
+        <button
+          class="menububble__button"
+          :class="{ 'is-active': isActive.italic() }"
+          @click="commands.italic"
+        >
+          <icon name="italic" />
+        </button>
+
+        <button
+          class="menububble__button"
+          :class="{ 'is-active': isActive.code() }"
+          @click="commands.code"
+        >
+          <icon name="code" />
+        </button>
+
+      </div>
+    </editor-menu-bubble>
+
+    <!-- 编辑区 -->
     <editor-content class="editor__content" :editor="editor" />
   </div>
 </template>
 
 <script>
 import Icon from '@/components/Icon'
-import { Editor, EditorContent, EditorMenuBar } from 'tiptap'
+import { Editor, EditorContent, EditorMenuBar,EditorMenuBubble } from 'tiptap'
 import {
   Blockquote,
   CodeBlock,
@@ -157,14 +194,17 @@ import {
   Underline,
   History,
 } from 'tiptap-extensions'
+
 export default {
   components: {
     EditorContent,
     EditorMenuBar,
+    EditorMenuBubble,
     Icon,
   },
   data() {
     return {
+      keepInBounds: true,
       editor: new Editor({
         extensions: [
           new Blockquote(),
