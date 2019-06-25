@@ -170,13 +170,6 @@
     <!-- 编辑区 -->
     <editor-content class="editor__content" :editor="editor" />
 
-    <div class="export">
-      <h3>JSON</h3>
-      <pre><code v-html="json"></code></pre>
-
-      <h3>HTML</h3>
-      <pre><code>{{ html }}</code></pre>
-    </div>
   </div>
 </template>
 
@@ -269,27 +262,3 @@ export default {
   },
 }
 </script>
-
-<style lang="scss" scoped>
-@import "@/assets/sass/variables.scss";
-.actions {
-  max-width: 30rem;
-  margin: 0 auto 2rem auto;
-}
-.export {
-  max-width: 30rem;
-  margin: 0 auto 2rem auto;
-  pre {
-    padding: 1rem;
-    border-radius: 5px;
-    font-size: 0.8rem;
-    font-weight: bold;
-    background: rgba($color-black, 0.05);
-    color: rgba($color-black, 0.8);
-  }
-  code {
-    display: block;
-    white-space: pre-wrap;
-  }
-}
-</style>
