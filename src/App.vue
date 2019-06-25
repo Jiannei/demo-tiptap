@@ -1,16 +1,12 @@
 <template>
   <div id="app">
-    <editor></editor>
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-import Editor from '@/components/Editor.vue'
 export default {
-  name: 'app',
-  components: {
-    Editor
-  }
+  name: 'app'
 }
 </script>
 
