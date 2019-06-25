@@ -43,6 +43,16 @@ npm install vue-router
 # or yarn add  vue-router
 ```
 
+### tailwind
+
+```
+# Using npm
+npm install tailwindcss -save-dev
+
+# Using Yarn
+yarn add tailwindcss --dev
+```
+
 ### tiptap
 
 ```

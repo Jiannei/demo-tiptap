@@ -22,6 +22,7 @@
     "eslint-plugin-vue": "^5.0.0",
     "node-sass": "^4.12.0",
     "sass-loader": "^7.1.0",
+    "tailwindcss": "^1.0.4",
     "vue-template-compiler": "^2.6.10"
   },
   "eslintConfig": {
@@ -40,6 +41,7 @@
   },
   "postcss": {
     "plugins": {
+      "tailwindcss": "./tailwind.config.js",
       "autoprefixer": {}
     }
   },
