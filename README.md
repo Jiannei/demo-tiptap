@@ -48,5 +48,5 @@ npm install vue-router
 ```
 yarn add tiptap
 yarn add tiptap-extensions
-yarn add tiptap-commands
+// yarn add tiptap-commands
 ```
