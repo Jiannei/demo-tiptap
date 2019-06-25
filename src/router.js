@@ -12,7 +12,27 @@ export default new Router({
     {
       path: '/',
       name: 'home',
-      component: () => import(/* webpackChunkName: "about" */ './views/Home.vue')
+      component: () => import('./views/Home.vue')
+    },
+    {
+      path: '/Basic',
+      name: 'Basic',
+      component: () => import('./components/examples/Basic/Index.vue')
+    },
+    {
+      path: '/MenuBubble',
+      name: 'MenuBubble',
+      component: () => import('./components/examples/MenuBubble/Index.vue')
+    },
+    {
+      path: '/FloatingMenu',
+      name: 'FloatingMenu',
+      component: () => import('./components/examples/FloatingMenu/Index.vue')
+    },
+    {
+      path: '/Links',
+      name: 'Links',
+      component: () => import('./components/examples/Links/Index.vue')
     }
   ]
 })
