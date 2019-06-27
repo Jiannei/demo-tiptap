@@ -1,4 +1,4 @@
-# sinan-editor
+# demo-tiptap
 
 ## Project setup
 ```
